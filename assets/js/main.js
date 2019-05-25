@@ -1,3 +1,3 @@
 import app from "../../static/bundle";
 
-app.props = {"title":"Something"};
+app.props = {"title":"{{site.Title}}"};
