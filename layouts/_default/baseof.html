@@ -9,11 +9,7 @@
 <html lang="en">
   <head>
   <title>
-    {{ if eq .Title site.Title }}
     {{ site.Title }}
-    {{ else }}
-    {{ with .Title }}{{ . }} | {{ end }}{{ site.Title }}
-    {{ end }}
   </title>
   {{ range .AlternativeOutputFormats }}
   {{ printf "<link rel=%q type=%q href=%q title=%q>" .Rel .MediaType.Type .Permalink site.Title | safeHTML }}

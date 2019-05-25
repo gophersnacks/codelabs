@@ -1,7 +1,10 @@
 <script>
-  import { onMount } from "svelte";
-  import {tutorials} from '../stores/tutorials';
+  import { sitedata } from "../stores/data";
   export let title;
+
+  function isTutorial(item) {
+    return item.type === "tutorials";
+  }
 </script>
 
 <style>
@@ -16,9 +19,10 @@
 
 <section class="section">
 <div class="container">
-  {#if $tutorials}
+  {#if $sitedata}
     <div class="tile is-ancestor">
-      {#each $tutorials.data.items as item}
+      {#each $sitedata.data.items as item}
+        {#if isTutorial(item)}
         <div class="tile is-4 is-parent">
           <div class="tile is-child">
             <article class="tile is-child notification is-warning">
@@ -38,6 +42,7 @@
             </article>
           </div>
         </div>
+        {/if}
       {/each}
     </div>
   {/if}
