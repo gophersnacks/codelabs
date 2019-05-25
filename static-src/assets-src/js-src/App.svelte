@@ -14,6 +14,7 @@
   import { getSnacks } from "./stores/snacks";
   import  Banner from "./components/Banner.svelte";
   export let url = "";
+  export let title = "";
 
 
   onMount(() => {
@@ -25,7 +26,7 @@
 </script>
 
 <Router url="{url}">
-  <Banner title="Crostini Snacks" />
+  <Banner {title} />
   <main>
 
     <Route path="tutorials" component="{Tutorials}" />
