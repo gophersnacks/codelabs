@@ -1,0 +1,3 @@
+<codelab-step label="{{ .Get "label" }}"{{ with .Get "duration" }} duration="{{ . }}"{{ end }}>
+{{ .Inner | markdownify }}
+</codelab-step>

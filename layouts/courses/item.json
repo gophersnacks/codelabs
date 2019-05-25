@@ -1,0 +1,12 @@
+{
+    "title": "{{ .Title }}"
+    ,"type": "{{ .Type }}"
+    ,"description": "{{ .Params.description}}"
+    ,"permalink": "{{ .Permalink }}"
+    ,"date": "{{ .Date }}"
+    {{ range $index, $e := .Site.Taxonomies }}
+    	{{ with $.Param $index }}
+    		,"{{ $index }}" : "{{ delimit . ", "}}"
+    	{{ end }}
+    {{ end }}
+}

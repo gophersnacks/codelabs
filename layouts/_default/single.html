@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<article>
+  {{ partial "heading.html" . }}
+  {{ .Content }}
+  {{ partial "tags.html" . }}
+</article>
+
+
+<div class="container page-page">
+    light blue: Served by Hugo<br/>
+    coral: Client side svelte<br/>
+    <div id="turtles" style="background-color:lightcoral">
+
+    </div>
+    <div style="background-color:lightblue">
+        {{.Content}}
+        -----<br />
+
+        title: {{ .Title }}<br />
+        type: {{ .Type }}<br />
+        mascot: {{ .Params.mascot }}<br />
+        permalink: {{ .Permalink }}<br />
+        data: <a href="{{ .Permalink }}index.json">index.json</a>(static, from hugo)<br />
+        {{ range .Params.Sports }}
+
+            sport: {{ . }}<br />
+        {{ end }}
+    </div>
+</div>
+
+
+
+
+{{ end }}
