@@ -1,3 +1,11 @@
-import app from "../../static/bundle";
+import App from "../../static/bundle";
 
-app.props = {title:"{{site.Title}}"};
+
+const app = new App({
+  target: document.body,
+  props: {
+    title: "{{site.Title}}"
+  }
+});
+
+export default app;

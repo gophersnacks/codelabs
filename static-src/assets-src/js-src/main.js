@@ -1,11 +1,1 @@
-// main.js
-import App from "./App.svelte";
-
-const app = new App({
-  target: document.body,
-  props: {
-    title: "Unknown title"
-  }
-});
-
-export default app;
+export {default as App} from "./App.svelte";
