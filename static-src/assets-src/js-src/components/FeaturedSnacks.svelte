@@ -40,7 +40,7 @@
                     <span class="tag">#{category}</span>
                   {/each}
                 </div>
-                <a class="button is-link is-fullwidth" href={snack.permalink}>
+                <a class="button is-link is-fullwidth" href={item.permalink}>
                   View
                 </a>
               </article>
